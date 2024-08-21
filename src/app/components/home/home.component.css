@@ -2,6 +2,10 @@
     background-color: #55575A;
 }
 
+.home {
+    padding-top: 100px;
+}
+
 footer {
     display: flex;
     justify-content: space-evenly;

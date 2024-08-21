@@ -1,10 +1,21 @@
 :root {
-    --titulos:  "Oswald", sans-serif;
+    --titulos: "Oswald", sans-serif;
     --parrafos: "Montserrat", sans-serif;
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #55575A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+}

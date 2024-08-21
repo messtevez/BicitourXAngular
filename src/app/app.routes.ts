@@ -13,5 +13,6 @@ export const routes: Routes = [
     {path: 'ingreso', title:'Ingreso', component: LoginComponent},
     {path: 'eventos', title: 'Eventos', component: EventosComponent}, 
     {path: 'quienesSomos', title: 'Quienes Somos', component: QuienesSomosComponent}, 
-    {path: 'seParteDeBicitourX', title: 'Se parte de Bicitour X', component: SeParteDeBicitourComponent}
+    {path: 'seParteDeBicitourX', title: 'Se parte de Bicitour X', component: SeParteDeBicitourComponent},
+    {path: 'registro', title:'Registrate', component: RegisterComponent}
 ];

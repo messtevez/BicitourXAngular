@@ -1,0 +1,131 @@
+.quienesSomos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #91BE28;
+/*    background-image: url(../../../assets/img/LogoTexto.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: right -350px top -50px;
+    background-attachment: fixed;
+    padding-top: 100px; */
+}
+
+.backgroundImg {
+    opacity: 0.8;
+    position: fixed;
+    left: 616px;
+    top: -60px;
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.misionVisionBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    z-index: 2;
+}
+
+.misionVision {
+    width: 20%;
+    margin: 20px 50px;
+    padding: 60px;
+    text-align: center;
+    background-color: #55575A;
+    color: white;
+    border-radius: 10px;
+    line-height: 35px;
+    z-index: 2;
+}
+
+.misionVision h3 {
+    z-index: 2;
+    font-family: var(--titulos);
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.misionVision p {
+    z-index: 2;
+    font-family: var(--parrafos);
+}
+
+.titulos {
+    z-index: 2;
+    width: 78%;
+}
+
+.titulos h3 {
+    z-index: 2;
+    font-family: var(--titulos);
+    font-weight: 400;
+    color: white;
+    font-size: 50px;
+}
+
+.nuestroEquipo {
+    background-color: #55575A;
+    color: white;
+    width: 76%;
+    text-align: center;
+    padding: 15px;
+    z-index: 2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+}
+
+.nuestroEquipo img {
+    z-index: 2;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.perfilesEquipo {
+    display: flex;
+    width: 85%;
+    margin: 20px;
+    border-radius: 10px;
+    z-index: 2;
+    padding: 10px;
+}
+
+.fotosPerfil {
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    width: 45%;
+    align-items: center;
+}
+
+.perfilesEquipo img {
+    z-index: 2;
+    width: 50%;
+    margin: 5px;
+}
+
+.textoPerfil {
+    z-index: 2;
+    width: 50%;
+    padding: 10px;
+    width: 50%;
+    margin-left: 20px;
+}
+
+.textoPerfil h4 {
+    z-index: 2;
+    font-family: var(--titulos);
+    margin-top: 20px;
+}
+
+.textoPerfil p {
+    margin-top: 50px;
+    z-index: 2;
+    font-family: var(--parrafos);
+}

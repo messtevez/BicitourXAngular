@@ -1,0 +1,123 @@
+.ingreso{
+    background-color: #621D74;
+    height: 88vh;
+    padding-top: 100px;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.backgroundImg {
+    opacity: 0.8;
+    position: fixed;
+    left: 616px;
+    top: -60px;
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--titulos);
+
+}
+
+.registro{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 200px;
+}
+
+.tituloIngreso{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.formularioLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.formularioLogin input{
+    border-radius: 5px;
+    height: 1.5rem;
+    margin: 5px;
+    width: 300px;
+    margin: 0 30px;
+    border: none;
+}
+
+.formularioLogin b{
+    font-weight: 300;
+}
+.loginInput{
+    margin: 30px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.pw{
+    margin: 0 0 40px 0;
+    font-size: 20px;
+}
+
+.button-53 {
+    z-index: 2;
+    background-color: #EBA935;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: var(--titulos);
+    font-size: 1rem;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-53:focus {
+    outline: 0;
+}
+
+.button-53:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+
+@media (min-width: 768px) {
+    .button-53 {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
+}
