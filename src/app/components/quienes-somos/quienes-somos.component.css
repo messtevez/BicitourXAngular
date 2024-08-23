@@ -3,13 +3,8 @@
     flex-direction: column;
     align-items: center;
     background-color: #91BE28;
-/*    background-image: url(../../../assets/img/LogoTexto.png);
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: right -350px top -50px;
-    background-attachment: fixed;
-    padding-top: 100px; */
 }
+
 
 .backgroundImg {
     opacity: 0.8;

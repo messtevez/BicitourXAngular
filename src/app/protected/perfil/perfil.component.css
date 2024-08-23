@@ -1,4 +1,4 @@
-.eventos{
+.dashboard{
     background-color: #EBA935;
     height: 100vh;
     padding-top: 100px;
@@ -7,15 +7,8 @@
     align-items: center;
 }
 
-.eventos h3{
-    color: white;
-    font-size: 40px;
-    font-family: var(--titulos);
-    font-weight: 400;
-}
-
 .backgroundImg {
-    opacity: 0.8;
+    opacity: 0.9;
     width: 80%;
     position: fixed;
     left: 616px;
@@ -23,4 +16,12 @@
     height: auto;
     overflow: hidden;
     z-index: 1;
+}
+
+.dashboard h3{
+    color: white;
+    font-size: 40px;
+    padding: 10px;
+    font-family: var(--titulos);
+    font-weight: 400;
 }

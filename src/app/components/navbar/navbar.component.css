@@ -47,10 +47,21 @@
     display: flex;
     align-items: center;
     padding-left: 100px;
+    color: white;
+
 }
 
 .login a{
     font-size: 30px;
     color: white;
     text-decoration: none;
+}
+
+.login p{
+    padding: 5px;
+}
+
+.active {
+    border-bottom: 4px solid white;
+    border-radius: 5px;
 }

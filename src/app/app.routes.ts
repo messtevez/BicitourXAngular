@@ -5,6 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { QuienesSomosComponent } from './components/quienes-somos/quienes-somos.component';
 import { SeParteDeBicitourComponent } from './components/se-parte-de-bicitour/se-parte-de-bicitour.component';
+import { PerfilComponent } from './protected/perfil/perfil.component';
+import { authGuard } from './guards/auth.guard';
 
 
 
@@ -14,5 +16,6 @@ export const routes: Routes = [
     {path: 'eventos', title: 'Eventos', component: EventosComponent}, 
     {path: 'quienesSomos', title: 'Quienes Somos', component: QuienesSomosComponent}, 
     {path: 'seParteDeBicitourX', title: 'Se parte de Bicitour X', component: SeParteDeBicitourComponent},
-    {path: 'registro', title:'Registrate', component: RegisterComponent}
+    {path: 'registro', title:'Registrate', component: RegisterComponent}, 
+    {path: 'perfil', title: 'Tu perfil', component: PerfilComponent, canActivate:[authGuard]}
 ];
