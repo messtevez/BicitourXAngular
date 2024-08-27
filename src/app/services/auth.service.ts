@@ -27,7 +27,9 @@ private apiUrl = "http://localhost:4001/api"
   }
 
   loggedOut():void{
-    sessionStorage.removeItem('token')
+    //sessionStorage.removeItem('token')
+    //sessionStorage.removeItem('nombre')
+    sessionStorage.clear()
   }
 
   getName():string|null{

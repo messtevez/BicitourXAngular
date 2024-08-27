@@ -43,6 +43,7 @@
 
 }
 .login{
+    position: relative;
     width: 20%;
     display: flex;
     align-items: center;
@@ -55,6 +56,9 @@
     font-size: 30px;
     color: white;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login p{
@@ -64,4 +68,24 @@
 .active {
     border-bottom: 4px solid white;
     border-radius: 5px;
+}
+
+.dot-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    background-color: rgba(85, 87, 90, 1);
+    padding: 1rem;
+    top: 95px;
+    right: 166px;
+    top: 79px;
+    right: 131px;
+    border-radius: 5px;
+    width: 100px;
+
+    span {
+        color: white;
+        cursor:pointer;
+    }
 }

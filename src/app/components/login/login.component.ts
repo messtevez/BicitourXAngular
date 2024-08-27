@@ -21,13 +21,23 @@ export class LoginComponent {
     private router:Router
   ){}
 
+  
   login():void{
     this.authService.login(this.email, this.pw).subscribe(
       response=>{
         sessionStorage.setItem('token', response.token)
+        sessionStorage.setItem('nombre', response.nombre)
         this.router.navigate(['/perfil'])
+        console.log(response)
       }, error=>{
-        Swal.fire('Error', error.error.msg, 'error')
+        if(error.error.msg.email){
+          Swal.fire('Error', error.error.msg.email.msg, 'error')
+        }else if(error.error.msg.pw){
+          Swal.fire('Error', error.error.msg.pw.msg, 'error')
+        }else{
+          console.log(error)
+          Swal.fire('Error', error.error.msg, 'error')
+        }        
       }
     )
   }

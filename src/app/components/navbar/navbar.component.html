@@ -8,7 +8,15 @@
         </ul>
     </div>
     <div class="login">
-        <a routerLink="/ingreso"><i class="ri-account-circle-line"></i>Nombre user</a>
-        
+        <a routerLink="/ingreso" (click)="openModal()"><i class="ri-account-circle-line"></i><p *ngIf="isLoggedIn">{{nombre}}</p></a>
+        @if (isModalOpen) {
+            <div class="dot-menu" *ngIf="isLoggedIn">
+                <span class="option">Actualizar perfil</span>
+                <span class="option" (click)="logout()">Cerrar sesion</span>
+            </div>  
+        }
+    </div>
+    <div>
+
     </div>
 </div>
