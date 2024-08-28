@@ -24,3 +24,16 @@
     overflow: hidden;
     z-index: 1;
 }
+
+
+
+.cajaEventos{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; 
+}
+
+.eventoImg img{
+    height: 250px;
+    width: 200px;
+}
