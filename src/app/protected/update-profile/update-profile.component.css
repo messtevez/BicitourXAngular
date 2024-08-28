@@ -1,0 +1,116 @@
+.updatePage{
+    background-color: #EBA935;
+    height: 86vh;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updatePage h3{
+    color: white;
+    font-family: var(--titulos);
+    font-size: 30px;
+    margin: 10px;
+    padding-top: 20px;
+    font-weight: 400;
+}
+
+.backgroundImg {
+    opacity: 0.9;
+    width: 80%;
+    position: fixed;
+    left: 616px;
+    top: -60px;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.updateForm{
+    z-index: 2;
+    font-family: var(--titulos);
+    color: white;
+    margin: 20px;
+}
+
+.updateForm label{
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+.updateForm input{
+    border-radius: 5px;
+    border: none;
+    height: 1.5rem;
+}
+
+.updateForm select{
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 1.5rem;
+}   
+
+.formulario{
+    line-height: 15px;
+    padding-top: 20px;
+}
+
+.botonRegistro{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-53 {
+    z-index: 2;
+    background-color: #621D74;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: var(--titulos);
+    font-size: 1rem;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 2rem;
+}
+
+.button-53:focus {
+    outline: 0;
+}
+
+.button-53:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+
+@media (min-width: 768px) {
+    .button-53 {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
+}

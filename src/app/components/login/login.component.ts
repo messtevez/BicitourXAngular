@@ -27,6 +27,7 @@ export class LoginComponent {
       response=>{
         sessionStorage.setItem('token', response.token)
         sessionStorage.setItem('nombre', response.nombre)
+        sessionStorage.setItem('email', response.email)
         this.router.navigate(['/perfil'])
         console.log(response)
       }, error=>{
@@ -41,6 +42,5 @@ export class LoginComponent {
       }
     )
   }
-
 
 }

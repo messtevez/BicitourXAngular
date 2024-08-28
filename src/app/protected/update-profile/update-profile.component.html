@@ -1,8 +1,8 @@
 <app-navbar background="#EBA935"></app-navbar>
-<section class="registro">
-    <img class="backgroundImg" alt="" src="../../../assets/img/LogoTexto.png">
-    <h3>Crea tu cuenta con Bicitour X</h3>
-    <div class="registroForm">
+<section class="updatePage">
+    <img class="backgroundImg" alt="" src="../../../assets/img/logo color.png">
+    <h3>Actualiza tus datos</h3>
+    <div class="updateForm">
         <form (ngSubmit)="onSubmit($event)">
             <div class="formulario">
                 <label for="nombre">Nombre:</label>
@@ -29,13 +29,16 @@
 
                 <label for="numero_documento">Número de Documento:</label>
                 <input [(ngModel)]="documentoDeIdentidad" type="text" id="numero_documento" name="numero_documento" required><br><br>
-                
+
                 <label for="numero_contacto">Número de contacto:</label>
-                <input [(ngModel)]="numeroDeContacto" type="text" id="numero_contacto" name="numero_contacto" required><br><br></div>
+                <input [(ngModel)]="numeroDeContacto" type="text" id="numero_contacto" name="numero_contacto" required><br><br>
+
+            </div>
 
             <div class="botonRegistro">
-                <button class="button-53" type="submit">Registrate</button>
+                <button class="button-53" type="submit">Actualizar datos</button>
             </div>
         </form>
     </div>
 </section>
+

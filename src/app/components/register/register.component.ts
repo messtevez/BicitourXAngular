@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, numberAttribute } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -22,11 +22,12 @@ export class RegisterComponent {
   nacionalidad: string = ''
   tipoDeDocumento: string = ''
   documentoDeIdentidad: string = ''
+  numeroDeContacto:string=''
 
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit(event: Event): void {
-    this.authService.register(this.email, this.pw, this.edad, this.nombre, this.nacionalidad, this.tipoDeDocumento, this.documentoDeIdentidad).subscribe(
+    this.authService.register(this.email, this.pw, this.edad, this.nombre, this.nacionalidad, this.tipoDeDocumento, this.documentoDeIdentidad, this.numeroDeContacto).subscribe(
       response => {
         if (response.ok) {
           console.log(response)
