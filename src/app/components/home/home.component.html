@@ -1,43 +1,46 @@
 <app-navbar background="#55575A"></app-navbar>
-<div class="home">
+<div class="home contenedor-imagen" (scroll)="onScroll($event)">
     <div class="floatingMedia">
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
-        <div><img src="" alt=""></div>
+        <img class="img img-1" src="https://i.postimg.cc/kGGn1K7T/main2.jpg">
+        <img class="img img-2" src="https://i.postimg.cc/k4fJvfPV/main1.jpg" alt="">
+        <img class="img img-3" src="https://i.postimg.cc/y6jj09Jw/Quienes-somos.jpg" alt="">
+        <img class="img img-4" src="https://i.postimg.cc/xC0jmBhD/main3.jpg" alt="">
+        <img class="img img-5" src="https://i.postimg.cc/Jh34GRT5/qs-girls.jpg" alt="">
     </div>
     <footer>
-        <div>
-            <div class="iconoFooter">
-                <img src="../../../assets/img/imgtipo.png" alt="iconoBicitourX">
-            </div>
+        <div class="iconoFooter">
+            <img src="../../../assets/img/imgtipo.png" alt="iconoBicitourX">
         </div>
-        <div>
-            <div class="redesSociales">
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/bicitour_x/" target="_blank"><i
-                                class="ri-instagram-line"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/bicitourxcundinamarca8" target="_blank"><i
-                                class="ri-facebook-circle-fill"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/@club_bicitour_x/" target="_blank"><i
-                                class="ri-youtube-fill"></i></a>
-                    </li>
-                </ul>
-            </div>
-
+        <div class="contactoYRedes">
             <div class="contactanos">
                 <h3>Contáctanos</h3>
                 <p>bicitourclubsdkfjhs</p>
                 <p>+57 322 463 9804</p>
             </div>
-
+            <div>
+                <div class="redesSociales">
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/bicitour_x/" target="_blank"><i
+                                    class="ri-instagram-line"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/bicitourxcundinamarca8" target="_blank"><i
+                                    class="ri-facebook-circle-fill"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@club_bicitour_x/" target="_blank"><i
+                                    class="ri-youtube-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <!--<p>© Bicitour X desde el 2018</p> -->
         </div>
     </footer>
+    <div >
+        <div class="scroll-bike">
+            <img src="../../../assets/img/bici white.png" alt="" class="moving-image">
+        </div>
+    </div>
 </div>

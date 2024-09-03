@@ -9,7 +9,7 @@
                 <input [(ngModel)]="nombre" type="text" id="nombre" name="nombre" required><br><br>
 
                 <label for="edad">Edad:</label>
-                <input [(ngModel)]="edad" type="number" id="edad" name="edad" required><br><br>
+                <input [(ngModel)]="edad" type="number" id="edad" name="edad" required min="18" max="100"><br><br>
 
                 <label for="correo">Correo Electrónico:</label>
                 <input [(ngModel)]="email" type="email" id="correo" name="correo" required><br><br>

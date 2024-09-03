@@ -28,6 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .links ul{
@@ -38,10 +39,34 @@
     text-decoration: none;
     padding: 10px;
     font-size: 20px;
-    color: white;
     margin-right: 50px;
 
 }
+
+.nav_link{
+    color: rgba(255,255,255,1);
+    position: relative;
+}
+
+.links a:hover{
+    color: rgba(255,255,255,0.85);
+}
+
+.nav_link::after{
+    content: "";
+    height: 4px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    opacity: 0;
+}
+
+.nav_link:hover::after{
+    opacity: 1;
+}
+
 .login{
     position: relative;
     width: 20%;
@@ -67,7 +92,6 @@
 
 .active {
     border-bottom: 4px solid white;
-    border-radius: 5px;
 }
 
 .dot-menu {
