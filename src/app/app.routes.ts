@@ -10,21 +10,24 @@ import { authGuard } from './guards/auth.guard';
 import { UpdateProfileComponent } from './protected/update-profile/update-profile.component';
 import { CrearEventoComponent } from './components/crear-evento/crear-evento.component';
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
-import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
 
 
 
 export const routes: Routes = [
+
+    //user 
     {path: '', title: `Home`, component: HomeComponent},
     {path: 'ingreso', title:'Ingreso', component: LoginComponent},
-    {path: 'eventos', title: 'Eventos', component: ListadoEventosComponent}, 
     {path: 'quienesSomos', title: 'Quienes Somos', component: QuienesSomosComponent}, 
     {path: 'seParteDeBicitourX', title: 'Se parte de Bicitour X', component: SeParteDeBicitourComponent},
     {path: 'registro', title:'Registro', component: RegisterComponent}, 
     {path: 'perfil', title: 'Perfil', component: PerfilComponent, canActivate:[authGuard]}, 
     {path: 'actualizardatos/:email', title: 'Actualiza tus datos', component: UpdateProfileComponent, canActivate:[authGuard]},
+
+    //Admin
     {path: 'crearEvento', title: 'Crea un evento', component: CrearEventoComponent },
+    {path: 'eventos', title: 'Eventos', component: ListadoEventosComponent}, 
     {path: 'DashboardA', title: 'Dashboard Administrativo', component: DashboardAdminComponent},
-    {path: 'DashboardU', title: 'Dashboard Usuarios', component: DashboardUserComponent}
+    
 
 ];
