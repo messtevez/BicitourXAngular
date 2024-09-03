@@ -1,19 +1,99 @@
 * {
     background-color: #55575A;
+    display: flex;
+    flex-direction: row;
 }
 
 .home {
     padding-top: 100px;
+    position: relative;
+    height: 86vh;
+    overflow-y: hidden !important;
+    overflow-x: scroll;
 }
+
+
+.img {
+    height: 30rem;
+    border-radius: 10px;
+    margin: 10px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s ease-out;
+
+}
+
+.img:hover {
+    animation: shake 2s;
+    z-index: 5;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+}
+
+
 
 footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: absolute;
+    left: 125rem;
 }
 
 footer img {
     width: 500px;
+}
+
+.iconoFooter {
+    margin: 0 5rem 0 13rem;
+}
+
+.contactoYRedes {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 16rem 0 5rem;
 }
 
 .redesSociales ul {
@@ -31,14 +111,79 @@ footer img {
 
 }
 
+.floatingMedia {
+    position: relative;
+}
+
+.img-1 {
+    position: absolute;
+    left: 6rem;
+    top: 4rem;
+    z-index: 2;
+}
+
+.img-2 {
+    position: absolute;
+    left: 34rem;
+}
+
+.img-3 {
+    position: absolute;
+    left: 59rem;
+    z-index: 2;
+    top: 14rem;
+    height: 56%;
+}
+
+.img-4 {
+    position: absolute;
+    left: 78rem;
+    z-index: 2;
+    bottom: 12rem;
+    height: 24rem;
+}
+
+.img-5 {
+    position: absolute;
+    left: 99rem;
+    z-index: 2;
+    top: 46px;
+}
+
 .contactanos {
     color: white;
     text-align: center;
     font-family: var(--titulos);
     font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contactanos p {
     margin-bottom: 0;
     font-family: var(--parrafos);
+}
+
+.contenedor-imagen {
+    width: 100%;
+}
+
+.scroll-bike {
+    height: 50px;
+    z-index: 6;
+    display: inline-block;
+    position: relative;
+    bottom: -523px;
+    left: 199px;
+    background: none;
+    width: 100%;
+
+}
+
+.moving-image {
+    background-color: transparent;
+    position: absolute;
+    height: 50px;
+    transition: transform 0.1s ease-out;
 }

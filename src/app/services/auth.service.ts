@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from '../interfaces/user';
 
 
 @Injectable({
@@ -10,16 +11,16 @@ export class AuthService {
 private apiUrl = "http://localhost:4001/api"
   constructor(private http: HttpClient) { }
 
-  register(email: string, pw: string, edad: string, nombre: string, nacionalidad: string, tipoDeDocumento: string, documentoDeIdentidad: string, numeroDeContacto:string): Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/registro`, {email, pw, edad, nombre, nacionalidad, tipoDeDocumento, documentoDeIdentidad, numeroDeContacto})
+  register(user: User): Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/registro`, {data: user})
   }
 
   login(email: string, pw: string):Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/login`, {email, pw})
   }
 
-  updateUser(email: string, pw: string, edad: string, nombre: string, nacionalidad: string, tipoDeDocumento: string, documentoDeIdentidad: string, numeroDeContacto:string):Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/update-user`,{email, pw, edad, nombre, nacionalidad, tipoDeDocumento, documentoDeIdentidad, numeroDeContacto})
+  updateUser(user: User):Observable<User>{
+    return this.http.put<any>(`${this.apiUrl}/update-user`,{data: user})
   }
 
   getUserByEmail(email:string){

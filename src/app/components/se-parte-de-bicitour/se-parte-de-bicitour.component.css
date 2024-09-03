@@ -1,3 +1,4 @@
+
 .cajaEnfoques {
     display: flex;
     flex-direction: column;
@@ -73,17 +74,33 @@
     width: 300px;
 }
 
+
 .bicitourGroup {
     background: url(../../../assets/img/sociall.jpg);
     background-size: cover;
     z-index: 2;
     height: 250px;
     width: 300px;
+
 }
 
+.effect{
+    transition: all .3s ease-out;
+}
 
+.effect:hover{
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+    opacity: 1;
+    transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    z-index: 5;
+}
 
-/* CSS */
 .button-53 {
     z-index: 2;
     background-color: #EBA935;

@@ -29,7 +29,6 @@ export class LoginComponent {
         sessionStorage.setItem('nombre', response.nombre)
         sessionStorage.setItem('email', response.email)
         this.router.navigate(['/perfil'])
-        console.log(response)
       }, error=>{
         if(error.error.msg.email){
           Swal.fire('Error', error.error.msg.email.msg, 'error')
