@@ -39,8 +39,8 @@ export class CrearEventosComponent {
     if (fileInput.files) {
       const filesArray = Array.from(fileInput.files);
 
-      if (this.imagenes.length + filesArray.length > 3) {
-        alert(`Solo puedes cargar hasta 3 imágenes. Actualmente tienes ${this.imagenes.length}.`);
+      if (this.imagenes.length + filesArray.length > 1) {
+        alert(`Solo puedes cargar 1 imagen. Actualmente tienes ${this.imagenes.length}.`);
         return;
       }
 
@@ -60,8 +60,8 @@ export class CrearEventosComponent {
   }
 
   guardarEvento(eventoForm: NgForm) {
-    if (!eventoForm.valid || this.evento.eventImg.length !== 3) {
-      this.errorMessage = 'Por favor, completa todos los campos correctamente y carga exactamente 3 imágenes.';
+    if (!eventoForm.valid || this.evento.eventImg.length !== 1) {
+      this.errorMessage = 'Por favor, completa todos los campos correctamente y carga exactamente 1 imagen.';
       this.markFormFieldsAsTouched(eventoForm);
       return;
     }

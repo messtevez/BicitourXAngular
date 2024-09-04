@@ -140,7 +140,7 @@
           </div>
 
           <div class="form-group">
-            <label class="evento__label" for="imagenes">Imágenes del evento (exactamente 3):</label>
+            <label class="evento__label" for="imagenes">Imágenes del evento (1):</label>
             <input
               class="evento__input"
               id="imagenes"
@@ -150,8 +150,8 @@
               accept="image/*"
               required
             />
-            <div class="error-message" *ngIf="evento.eventImg.length !== 3 && imagenesTouched">
-              Debes cargar exactamente 3 imágenes.
+            <div class="error-message" *ngIf="evento.eventImg.length !== 1 && imagenesTouched">
+              Debes cargar exactamente 1 imagen.
             </div>
           </div>
 
@@ -174,7 +174,7 @@
           <button
             class="evento__submit"
             type="submit"
-            [disabled]="isSubmitting || !eventoForm.valid || evento.eventImg.length !== 3"
+            [disabled]="isSubmitting || !eventoForm.valid || evento.eventImg.length !== 1"
           >
             Guardar Evento
           </button>

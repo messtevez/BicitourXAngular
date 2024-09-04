@@ -22,7 +22,7 @@ export class DashboardAdminComponent implements OnInit {
   constructor(private router: Router, private eventService: EventService) {}
 
   ngOnInit(): void {
-    const userId = sessionStorage.getItem('userId');
+    const userId = sessionStorage.getItem('id');
     if (userId) {
       this.eventService.getEventsByUserId(userId).subscribe({
         next: (response) => {

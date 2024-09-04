@@ -24,10 +24,11 @@ export class LoginComponent {
   public login(): void {
     this.authService.login(this.email, this.pw).subscribe({
       next: response => {
+        console.log(response);
         sessionStorage.setItem('token', response.token);
         sessionStorage.setItem('nombre', response.nombre);
         sessionStorage.setItem('email', response.email);
-        sessionStorage.setItem('id', response.user.id);
+        sessionStorage.setItem('id', response.id);
         this.router.navigate(['/perfil']);
         console.log(response);
       },
