@@ -10,27 +10,35 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  createEvent(eventData: any): Observable<any> {
+  public createEvent(eventData: any): Observable<any> {
     return this.http.post(`${environment.apiUrl}/create-event`, eventData);
   }
 
-  getAllEvents(): Observable<any> {
+  public getAllEvents(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/get-all-events`);
   }
 
-  getEventById(id: string): Observable<any> {
+  public getEventById(id: string): Observable<any> {
     return this.http.get(`${environment.apiUrl}/get-event/${id}`);
   }
 
-  updateEventById(id: string, updatedData: any): Observable<any> {
+  public updateEventById(id: string, updatedData: any): Observable<any> {
     return this.http.put(`${environment.apiUrl}/update-event/${id}`, updatedData);
   }
 
-  deleteEventById(id: string): Observable<any> {
+  public deleteEventById(id: string): Observable<any> {
     return this.http.delete(`${environment.apiUrl}/del-event/${id}`);
   }
 
-  addAttendeeToEvent(id: string, attendeeData: any): Observable<any> {
+  public addAttendeeToEvent(id: string, attendeeData: any): Observable<any> {
     return this.http.put(`${environment.apiUrl}/events/${id}/reg`, attendeeData);
+  }
+
+  public getEventsByUserId(userId: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/events/user/${userId}`);
+  }
+
+  public getEventsByUserParticipation(userId: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/events/user/${userId}/participation`);
   }
 }

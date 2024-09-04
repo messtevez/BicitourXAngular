@@ -1,11 +1,11 @@
 export const environment = {
     production: false,
     apiUrl: "http://localhost:3000/api",
-    apiKey: "AIzaSyDG6_Dj-S9BDwLFJenKLEHTeiCmT0bZXnI",
-    authDomain: "bicitourx.firebaseapp.com",
-    projectId: "bicitourx",
-    storageBucket: "bicitourx.appspot.com",
-    messagingSenderId: "505823755299",
-    appId: "1:505823755299:web:251e1ee7aa9442f2b7c596"
+    apiKey: "AIzaSyDWNY-0AAFsqzfzfXxjnr3jLvxELHzje40",
+    authDomain: "bicitourx-18c73.firebaseapp.com",
+    projectId: "bicitourx-18c73",
+    storageBucket: "bicitourx-18c73.appspot.com",
+    messagingSenderId: "36408695640",
+    appId: "1:36408695640:web:e65cdd9cac3e70830a232d"
   }
   

@@ -1,0 +1,185 @@
+<section class="eventos">
+  <div class="eventos__activos">
+    <h3 class="eventos__titulo">Eventos activos</h3>
+    <div class="eventos__caja">
+      <div class="evento">
+        <form
+          class="evento__formulario"
+          #eventoForm="ngForm"
+          (ngSubmit)="guardarEvento(eventoForm)"
+          novalidate
+        >
+          <div class="form-group">
+            <label class="evento__label" for="name">Nombre Evento:</label>
+            <input
+              class="evento__input"
+              id="name"
+              type="text"
+              [(ngModel)]="evento.name"
+              name="name"
+              required
+              #name="ngModel"
+            />
+            <div class="error-message" *ngIf="name.invalid && name.touched">
+              El nombre del evento es requerido.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="date">Fecha:</label>
+            <input
+              class="evento__input"
+              id="date"
+              type="date"
+              [(ngModel)]="evento.date"
+              name="date"
+              required
+              #date="ngModel"
+            />
+            <div class="error-message" *ngIf="date.invalid && date.touched">
+              La fecha del evento es requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="hour">Hora:</label>
+            <input
+              class="evento__input"
+              id="hour"
+              type="time"
+              [(ngModel)]="evento.hour"
+              name="hour"
+              required
+              #hour="ngModel"
+            />
+            <div class="error-message" *ngIf="hour.invalid && hour.touched">
+              La hora del evento es requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="location">Ubicación:</label>
+            <input
+              class="evento__input"
+              id="location"
+              type="text"
+              [(ngModel)]="evento.location"
+              name="location"
+              required
+              #location="ngModel"
+            />
+            <div class="error-message" *ngIf="location.invalid && location.touched">
+              La ubicación del evento es requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="cost">Costo:</label>
+            <input
+              class="evento__input"
+              id="cost"
+              type="text"
+              [(ngModel)]="evento.cost"
+              name="cost"
+              required
+              min="0"
+              #cost="ngModel"
+            />
+            <div class="error-message" *ngIf="cost.invalid && cost.touched">
+              El costo del evento es requerido y debe ser un número positivo.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="distance">Distancia:</label>
+            <input
+              class="evento__input"
+              id="distance"
+              type="text"
+              [(ngModel)]="evento.distance"
+              name="distance"
+              required
+              #distance="ngModel"
+            />
+            <div class="error-message" *ngIf="distance.invalid && distance.touched">
+              La distancia del evento es requerida y debe ser un número positivo.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="capacity">Capacidad:</label>
+            <input
+              class="evento__input"
+              id="capacity"
+              type="text"
+              [(ngModel)]="evento.capacity"
+              name="capacity"
+              required
+              min="1"
+              #capacity="ngModel"
+            />
+            <div class="error-message" *ngIf="capacity.invalid && capacity.touched">
+              La capacidad del evento es requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="category">Categoría:</label>
+            <input
+              class="evento__input"
+              id="category"
+              type="text"
+              [(ngModel)]="evento.category"
+              name="category"
+              required
+              #category="ngModel"
+            />
+            <div class="error-message" *ngIf="category.invalid && category.touched">
+              La categoría del evento es requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="imagenes">Imágenes del evento (exactamente 3):</label>
+            <input
+              class="evento__input"
+              id="imagenes"
+              type="file"
+              (change)="cargarImagenes($event)"
+              multiple
+              accept="image/*"
+              required
+            />
+            <div class="error-message" *ngIf="evento.eventImg.length !== 3 && imagenesTouched">
+              Debes cargar exactamente 3 imágenes.
+            </div>
+          </div>
+
+          <div class="evento__preview" *ngIf="evento.eventImg.length > 0">
+            <h4 class="evento__preview-titulo">Vista previa de las imágenes cargadas:</h4>
+            <div class="evento__preview-imgs">
+              <img
+                *ngFor="let img of evento.eventImg"
+                [src]="img"
+                alt="Imagen del evento"
+                class="evento__preview-img"
+              />
+            </div>
+          </div>
+
+          <div class="error-message" *ngIf="errorMessage">
+            {{ errorMessage }}
+          </div>
+
+          <button
+            class="evento__submit"
+            type="submit"
+            [disabled]="isSubmitting || !eventoForm.valid || evento.eventImg.length !== 3"
+          >
+            Guardar Evento
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

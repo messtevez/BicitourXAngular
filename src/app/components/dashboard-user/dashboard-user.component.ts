@@ -6,13 +6,13 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { EventService } from '../../services/event.service';
 
 @Component({
-  selector: 'app-dashboard-admin',
+  selector: 'app-dashboard-user',
   standalone: true,
   imports: [FullCalendarModule],
-  templateUrl: './dashboard-admin.component.html',
-  styleUrls: ['./dashboard-admin.component.css']
+  templateUrl: './dashboard-user.component.html',
+  styleUrls: ['./dashboard-user.component.css']
 })
-export class DashboardAdminComponent implements OnInit {
+export class DashboardUserComponent implements OnInit {
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
@@ -35,7 +35,7 @@ export class DashboardAdminComponent implements OnInit {
           }
         },
         error: (error) => {
-          console.error('Error al obtener los eventos del administrador:', error);
+          console.error('Error al obtener los eventos del usuario:', error);
         }
       });
     } else {
@@ -44,6 +44,6 @@ export class DashboardAdminComponent implements OnInit {
   }
 
   navigateToCreateEvent(): void {
-    this.router.navigate(['/crearEvento']);
+    this.router.navigate(['/eventos']);
   }
 }

@@ -7,13 +7,13 @@ import { EventService } from '../../services/event.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-crear-evento',
+  selector: 'app-crear-eventos',
   standalone: true,
   imports: [CommonModule, NavbarComponent, FormsModule],
-  templateUrl: './crear-evento.component.html',
-  styleUrl: './crear-evento.component.css'
+  templateUrl: './crear-eventos.component.html',
+  styleUrls: ['./crear-eventos.component.css']
 })
-export class CrearEventoComponent {
+export class CrearEventosComponent {
   evento = {
     name: '',
     date: '',
