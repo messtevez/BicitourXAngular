@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
+import { User } from '../../interfaces/user';
 
 
 
@@ -22,23 +23,32 @@ export class RegisterComponent {
   nacionalidad: string = ''
   tipoDeDocumento: string = ''
   documentoDeIdentidad: string = ''
-  numeroDeContacto:string=''
+  numeroDeContacto: string = ''
 
   constructor(private authService: AuthService, private router: Router) { }
 
   onSubmit(event: Event): void {
-    this.authService.register(this.email, this.pw, this.edad, this.nombre, this.nacionalidad, this.tipoDeDocumento, this.documentoDeIdentidad, this.numeroDeContacto).subscribe(
+    const user: User = {
+      ok: true,
+      email: this.email,
+      pw: this.pw,
+      edad: this.edad,
+      nombre: this.nombre,
+      nacionalidad: this.nacionalidad,
+      tipoDeDocumento: this.tipoDeDocumento,
+      documentoDeIdentidad: this.documentoDeIdentidad,
+      numeroDeContacto: this.numeroDeContacto
+    }
+    this.authService.register(user).subscribe(
       response => {
         if (response.ok) {
-          console.log(response)
           Swal.fire('Usuario registrado', response.msg, 'success')
           this.router.navigate(['/perfil'])
         } else {
           Swal.fire('Error al crear usuario', response.error.msg, 'error')
         }
       }, error => {
-        console.log(error)
-        Swal.fire('Error. Contacta a un administrador.', error.error.msg, 'error')
+        Swal.fire('Error. Contacta a un administrador.', error.error.msg.msg, 'error')
       }
     )
   }
