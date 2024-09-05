@@ -50,9 +50,6 @@ export class NavbarComponent implements OnInit{
     }
   }
 
-  
-
-
   logout() {
     this.authService.loggedOut()
     this.router.navigate(['/ingreso'])
