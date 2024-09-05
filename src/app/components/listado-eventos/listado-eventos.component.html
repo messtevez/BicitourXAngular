@@ -1,4 +1,6 @@
-<div *ngIf="events$ | async as events; else noEvents">
+<app-navbar background="#EBA935"></app-navbar>
+
+<div *ngIf="events.length > 0; else noEvents" class="eventos">
   <div *ngFor="let event of events">
     <h3>{{ event.name }}</h3>
     <p>{{ event.date }} - {{ event.hour }}</p>
@@ -6,10 +8,13 @@
     <p>Cost: {{ event.cost | currency }}</p>
     <p>Distance: {{ event.distance }}</p>
     <p>Category: {{ event.category }}</p>
-    <img *ngFor="let img of event.eventImgs" [src]="img" alt="{{ event.name }}">
+    <div *ngIf="event.eventImgs && event.eventImgs.length > 0">
+      <img *ngFor="let img of event.eventImgs" [src]="img" alt="{{ event.name }}">
+    </div>
     <button (click)="requestToJoin(event._id)">Request to Join</button>
   </div>
 </div>
+
 <ng-template #noEvents>
   <p>No events available.</p>
 </ng-template>

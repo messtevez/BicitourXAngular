@@ -11,6 +11,8 @@ import { UpdateProfileComponent } from './protected/update-profile/update-profil
 import { DashboardAdminComponent } from './components/dashboard-admin/dashboard-admin.component';
 import { ListadoEventosComponent } from './components/listado-eventos/listado-eventos.component';
 import { roleGuard } from './guards/roles.guard';
+import { DashboardUserComponent } from './components/dashboard-user/dashboard-user.component';
+
 
 
 export const routes: Routes = [
@@ -20,8 +22,8 @@ export const routes: Routes = [
   { path: 'quienesSomos', title: 'Quienes Somos', component: QuienesSomosComponent },
   { path: 'seParteDeBicitourX', title: 'Se parte de Bicitour X', component: SeParteDeBicitourComponent },
   { path: 'registro', title: 'Registro', component: RegisterComponent },
-  { path: 'perfil', title: 'Perfil', component: PerfilComponent, canActivate: [authGuard] },
   { path: 'actualizardatos/:email', title: 'Actualiza tus datos', component: UpdateProfileComponent, canActivate: [authGuard] },
+  { path: 'dashboardU', title: 'Dashboard Usuarios', component: DashboardUserComponent, canActivate: [authGuard] },
 
   { path: 'crearEvento', title: 'Crear un evento', component: CrearEventosComponent, canActivate: [authGuard, roleGuard], data: { expectedRole: 'admin' } },
   { path: 'dashboardA', title: 'Dashboard Administrativo', component: DashboardAdminComponent, canActivate: [authGuard, roleGuard], data: { expectedRole: 'admin' } },

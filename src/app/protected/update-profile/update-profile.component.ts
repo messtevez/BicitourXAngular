@@ -31,22 +31,6 @@ export class UpdateProfileComponent {
 
   constructor(private authService: AuthService, private router: Router, private activeRoute: ActivatedRoute) { }
 
-  // onSubmit(user: User): void {
-  //   this.authService.updateUser(user).subscribe(
-  //     response => {
-  //       if (response.ok) {
-  //         console.log(response)
-  //         Swal.fire()
-  //         this.router.navigate(['/perfil'])
-  //       } else {
-  //         Swal.fire()
-  //       }
-  //     }, error => {
-  //       console.log(error)
-  //       Swal.fire('Error. Contacta a un administrador.', error.error.msg, 'error')
-  //     }
-  //   )
-  // }
 
   onSubmit(event: Event): void {
     const user: User = {
@@ -60,7 +44,7 @@ export class UpdateProfileComponent {
       documentoDeIdentidad: this.documentoDeIdentidad,
       numeroDeContacto: this.numeroDeContacto
     }
-    this.authService.updateUser(user).subscribe(
+    this.authService.updateUser(user.email, user.pw, user.edad, user.nombre, user.nacionalidad, user.tipoDeDocumento, user.documentoDeIdentidad, user.numeroDeContacto).subscribe(
       (response: any) => {
         if (response.ok) {
           Swal.fire('Datos actualizados correctamente.', response.msg, 'success')

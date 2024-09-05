@@ -4,22 +4,27 @@ import { Observable } from 'rxjs';
 import { EventService } from '../../services/event.service';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-listado-eventos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NavbarComponent],
   templateUrl: './listado-eventos.component.html',
   styleUrls: ['./listado-eventos.component.css']
 })
 export class ListadoEventosComponent implements OnInit {
-  events$!: Observable<any[]>;
+  events: any[] = [];
 
   constructor(private eventService: EventService, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.events$ = this.eventService.getAllEvents();
-  }
+    this.eventService.getAllEvents().subscribe(response => {
+      if (response.ok) {
+        this.events = response.events;
+      }
+    });
+    }
 
   requestToJoin(eventId: string): void {
     const userId = 'userIdStoredInSessionOrSomewhereElse';

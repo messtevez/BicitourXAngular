@@ -29,7 +29,14 @@ export class LoginComponent {
         sessionStorage.setItem('nombre', response.nombre);
         sessionStorage.setItem('email', response.email);
         sessionStorage.setItem('id', response.id);
-        this.router.navigate(['/dashboardA']);
+        sessionStorage.setItem('rol', response.rol.rol)
+
+        if(response.rol.rol=='admin'){
+          this.router.navigate(['/dashboardA']);
+        }else{
+          this.router.navigate(['/dashboardU']);
+        }
+        
         console.log(response);
       },
       error: error => {
