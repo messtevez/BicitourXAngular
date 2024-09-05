@@ -6,7 +6,6 @@
   justify-content: center;
   background-color: #EBA935;
   height: 120vh;
-
 }
 
 .caja-calendario{
@@ -15,7 +14,7 @@
 
 .boton{
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
 .backgroundImg {

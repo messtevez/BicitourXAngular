@@ -113,3 +113,7 @@
         cursor:pointer;
     }
 }
+
+.ri-home-gear-line:hover {
+    cursor: pointer;
+}

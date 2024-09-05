@@ -1,5 +1,4 @@
 .eventos {
-  margin: -90px;
   background-color: #EBA935;
   min-height: 100vh;
   padding-top: 100px;
@@ -68,7 +67,8 @@
   font-family: var(--titulos);
 }
 .evento input{
-  color: white;
+  color: black;
+
 }
 
 .form-group {
