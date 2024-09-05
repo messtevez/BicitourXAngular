@@ -12,7 +12,7 @@ import { UpdateProfileComponent } from './protected/update-profile/update-profil
 
 
 export const routes: Routes = [
-    {path: '', title: `Home`, component: HomeComponent},
+    {path: '', title: `Inicio`, component: HomeComponent},
     {path: 'ingreso', title:'Ingreso', component: LoginComponent},
     {path: 'eventos', title: 'Eventos', component: EventosComponent}, 
     {path: 'quienesSomos', title: 'Quienes Somos', component: QuienesSomosComponent}, 
