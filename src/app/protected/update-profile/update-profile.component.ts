@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
 import { HttpResponse } from '@angular/common/http';
-import { ApiResponse, User } from '../../interfaces/user';
 
 
 
@@ -24,49 +23,20 @@ export class UpdateProfileComponent {
   nacionalidad: string = ''
   tipoDeDocumento: string = ''
   documentoDeIdentidad: string = ''
-  numeroDeContacto: string = ''
-  user: any = {}
-
-
+  numeroDeContacto: string=''
+  user:any={}
 
   constructor(private authService: AuthService, private router: Router, private activeRoute: ActivatedRoute) { }
 
-  // onSubmit(user: User): void {
-  //   this.authService.updateUser(user).subscribe(
-  //     response => {
-  //       if (response.ok) {
-  //         console.log(response)
-  //         Swal.fire()
-  //         this.router.navigate(['/perfil'])
-  //       } else {
-  //         Swal.fire()
-  //       }
-  //     }, error => {
-  //       console.log(error)
-  //       Swal.fire('Error. Contacta a un administrador.', error.error.msg, 'error')
-  //     }
-  //   )
-  // }
-
   onSubmit(event: Event): void {
-    const user: User = {
-      ok: true,
-      email: this.email,
-      pw: this.pw,
-      edad: this.edad,
-      nombre: this.nombre,
-      nacionalidad: this.nacionalidad,
-      tipoDeDocumento: this.tipoDeDocumento,
-      documentoDeIdentidad: this.documentoDeIdentidad,
-      numeroDeContacto: this.numeroDeContacto
-    }
-    this.authService.updateUser(user).subscribe(
-      (response: any) => {
+    this.authService.updateUser(this.email, this.pw, this.edad, this.nombre, this.nacionalidad, this.tipoDeDocumento, this.documentoDeIdentidad, this.numeroDeContacto).subscribe(
+      response => {
         if (response.ok) {
-          Swal.fire('Datos actualizados correctamente.', response.msg, 'success')
+          console.log(response)
+          Swal.fire('Usuario actulizado.', response.msg, 'success')
           this.router.navigate(['/perfil'])
         } else {
-          Swal.fire()
+          Swal.fire('Error al actualizar los datos', response.error.msg, 'error')
         }
       }, error => {
         console.log(error)
@@ -75,20 +45,13 @@ export class UpdateProfileComponent {
     )
   }
 
-  ngOnInit() {
-    const userEmail: any = this.activeRoute.snapshot.paramMap.get('email')
+  ngOnInit(){
+    const userEmail:any = this.activeRoute.snapshot.paramMap.get('email')
     if (userEmail) {
       this.authService.getUserByEmail(userEmail).subscribe(
-        (response: any) => {
-          this.email = response.email
-          this.nombre = response.nombre
-          this.edad = response.edad
-          this.pw = response.pw
-          this.nacionalidad = response.nacionalidad
-          this.tipoDeDocumento = response.tipoDeDocumento
-          this.numeroDeContacto = response.numeroDeContacto
-          this.documentoDeIdentidad = response.documentoDeIdentidad
-        }, error => {
+        response => {
+          console.log(response) 
+        },error=>{
           console.log(error)
         }
       )
