@@ -1,4 +1,4 @@
-<div *ngIf="events.length > 0; else noEvents">
+<div *ngIf="events$ | async as events; else noEvents">
   <div *ngFor="let event of events">
     <h3>{{ event.name }}</h3>
     <p>{{ event.date }} - {{ event.hour }}</p>
