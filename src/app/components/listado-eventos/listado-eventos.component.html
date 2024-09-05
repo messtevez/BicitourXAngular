@@ -1,0 +1,15 @@
+<div *ngIf="events$ | async as events; else noEvents">
+  <div *ngFor="let event of events">
+    <h3>{{ event.name }}</h3>
+    <p>{{ event.date }} - {{ event.hour }}</p>
+    <p>Location: {{ event.location }}</p>
+    <p>Cost: {{ event.cost | currency }}</p>
+    <p>Distance: {{ event.distance }}</p>
+    <p>Category: {{ event.category }}</p>
+    <img *ngFor="let img of event.eventImgs" [src]="img" alt="{{ event.name }}">
+    <button (click)="requestToJoin(event._id)">Request to Join</button>
+  </div>
+</div>
+<ng-template #noEvents>
+  <p>No events available.</p>
+</ng-template>
