@@ -4,7 +4,6 @@ import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
-import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-register',

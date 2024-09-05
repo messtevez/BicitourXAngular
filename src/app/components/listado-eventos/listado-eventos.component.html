@@ -6,13 +6,10 @@
     <p>Cost: {{ event.cost | currency }}</p>
     <p>Distance: {{ event.distance }}</p>
     <p>Category: {{ event.category }}</p>
-    <div *ngIf="event.eventImgs && event.eventImgs.length > 0">
-      <img *ngFor="let img of event.eventImgs" [src]="img" alt="{{ event.name }}">
-    </div>
+    <img *ngFor="let img of event.eventImgs" [src]="img" alt="{{ event.name }}">
     <button (click)="requestToJoin(event._id)">Request to Join</button>
   </div>
 </div>
-
 <ng-template #noEvents>
   <p>No events available.</p>
 </ng-template>
