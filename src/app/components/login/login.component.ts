@@ -29,7 +29,7 @@ export class LoginComponent {
         sessionStorage.setItem('nombre', response.nombre);
         sessionStorage.setItem('email', response.email);
         sessionStorage.setItem('id', response.id);
-        this.router.navigate(['/perfil']);
+        this.router.navigate(['/dashboardA']);
         console.log(response);
       },
       error: error => {
