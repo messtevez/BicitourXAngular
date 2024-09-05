@@ -44,7 +44,7 @@ export class RegisterComponent {
           sessionStorage.setItem('nombre', response.nombre);
           sessionStorage.setItem('email', response.email);
           sessionStorage.setItem('id', response.user.id);
-          this.router.navigate(['/perfil']);
+          this.router.navigate(['/dashboardU']);
         } else {
           Swal.fire('Error al crear usuario', response.error.msg, 'error');
         }
