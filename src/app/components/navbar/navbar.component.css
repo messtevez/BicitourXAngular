@@ -10,7 +10,7 @@
     font-family: var(--titulos);
     position: fixed;
     width: 100%;
-    z-index: 3;
+    z-index: 9;
 }
 .logo{
     width: 30%;

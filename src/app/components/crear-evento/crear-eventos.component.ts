@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-crear-eventos',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, FormsModule],
+  imports: [CommonModule, FormsModule, NavbarComponent],
   templateUrl: './crear-eventos.component.html',
   styleUrls: ['./crear-eventos.component.css']
 })

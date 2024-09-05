@@ -4,11 +4,12 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarOptions } from 'fullcalendar';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { EventService } from '../../services/event.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-dashboard-user',
   standalone: true,
-  imports: [FullCalendarModule],
+  imports: [FullCalendarModule, NavbarComponent],
   templateUrl: './dashboard-user.component.html',
   styleUrls: ['./dashboard-user.component.css']
 })

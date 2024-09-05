@@ -9,7 +9,7 @@
     </div>
     <div class="login" (mouseleave)="openModal()">
         <a routerLink="/ingreso" *ngIf="!isLoggedIn"><i class="ri-account-circle-line" ></i></a>
-        <a routerLink="/dashboardU" (mouseenter)="openModal()" *ngIf="isLoggedIn"><i class="ri-home-gear-line"></i><p>{{nombre}}</p></a>
+        <a (click)="perfil()" (mouseenter)="openModal()" *ngIf="isLoggedIn"><i class="ri-home-gear-line"></i><p>{{nombre}}</p></a>
         @if (isModalOpen) {
             <div class="dot-menu" *ngIf="isLoggedIn">
                 <span (click)="update()" class="option">Actualizar perfil</span>

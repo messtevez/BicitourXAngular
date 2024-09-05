@@ -110,6 +110,11 @@
     z-index: 5;
 }
 
+.eventoDes h4{
+    font-family: var(--titulos);
+    color: white;
+}
+
 .eventoDes p{
     font-family: var(--parrafos);
     color: white;

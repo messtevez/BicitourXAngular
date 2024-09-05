@@ -1,18 +1,30 @@
 .calendar {
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(250, 150, 0);
+    background-color: #EBA935;
+    height: 120vh;
+    padding-top: 90px;
+
   }
   
+  .backgroundImg {
+    opacity: 0.9;
+    width: 80%;
+    position: fixed;
+    left: 616px;
+    top: -60px;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
   .calendar__title {
     font-size: 2rem;
     color: #fff;
     margin-bottom: 20px;
-    text-transform: uppercase;
+    font-family: var(--titulos);
   }
   
   .calendar__content {
@@ -22,25 +34,70 @@
   
   .calendar__full-calendar {
     width: 100%;
-    background-color: rgb(80, 79, 79);
+    background-color: #55575A;
     cursor: pointer;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: var(--parrafos);
+    z-index: 5;
+    position: relative;
   }
-  
-  .calendar__button {
-    background-color: #ff7f50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+
+  .fc-right .fc-prev-button, .fc-right .fc-next-button{
+    background-color: #621D74;
+    background-image: none;
+}
+  .button-53 {
+    z-index: 2;
+    background-color: #621D74;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: var(--titulos);
     font-size: 1rem;
-    border-radius: 5px;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: .75rem 1.65rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 100%;
+    max-width: 460px;
+    position: relative;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .calendar__button:hover {
-    background-color: #ff4500;
-  }
-  
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 30px 0 55px 0;
+}
+
+.button-53:focus {
+    outline: 0;
+}
+
+.button-53:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+
+@media (min-width: 768px) {
+    .button-53 {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
+}

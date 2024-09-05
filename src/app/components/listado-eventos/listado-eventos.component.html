@@ -1,17 +1,26 @@
 <app-navbar background="#EBA935"></app-navbar>
 
 <div *ngIf="events.length > 0; else noEvents" class="eventos">
-  <div *ngFor="let event of events">
-    <h3>{{ event.name }}</h3>
-    <p>{{ event.date }} - {{ event.hour }}</p>
-    <p>Location: {{ event.location }}</p>
-    <p>Cost: {{ event.cost | currency }}</p>
-    <p>Distance: {{ event.distance }}</p>
-    <p>Category: {{ event.category }}</p>
-    <div *ngIf="event.eventImgs && event.eventImgs.length > 0">
+  <img class="backgroundImg" alt="" src="../../../assets/img/LogoTexto.png">
+  <h3 class="headingPrin">Eventos activos</h3>
+
+  <div *ngFor="let event of events" class="cajaEventos">
+    <div *ngIf="event.eventImgs && event.eventImgs.length > 0" class="eventoImg">
       <img *ngFor="let img of event.eventImgs" [src]="img" alt="{{ event.name }}">
     </div>
-    <button (click)="requestToJoin(event._id)">Request to Join</button>
+    <div class="cajaDescripcion">
+      <div class="eventoDes">
+        <h4>{{ event.name }}</h4>
+        <p>{{ event.date }} - {{ event.hour }}</p>
+        <p>Location: {{ event.location }}</p>
+        <p>Cost: {{ event.cost | currency }}</p>
+        <p>Distance: {{ event.distance }}</p>
+        <p>Category: {{ event.category }}</p>
+      </div>
+      <div>
+        <button class="button-53" (click)="requestToJoin(event._id)">Inscribete</button>
+      </div>
+    </div>
   </div>
 </div>
 

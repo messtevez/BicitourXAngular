@@ -1,8 +1,15 @@
+<app-navbar background="#EBA935"></app-navbar>
+
 <div class="calendar">
-    <h1 class="calendar__title">Calendario</h1>
+  <img class="backgroundImg" alt="" src="../../../assets/img/logo color.png">
+  <h1 class="calendar__title">Tu dashboard</h1>
+  <div class="caja-calendario">
+    <div class="boton">
+      <button class="button-53" (click)="navigateToCreateEvent()">Crear evento</button>
+    </div>
     <div class="calendar__content">
       <full-calendar class="calendar__full-calendar" [options]="calendarOptions"></full-calendar>
     </div>
-    <button class="calendar__button" (click)="navigateToCreateEvent()">Crear evento</button>
+
   </div>
-  
+</div>
