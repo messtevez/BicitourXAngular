@@ -8,11 +8,11 @@
   height: 120vh;
 }
 
-.caja-calendario{
+.caja-calendario {
   display: flex;
 }
 
-.boton{
+.boton {
   display: flex;
   align-items: center;
 }
@@ -27,6 +27,7 @@
   overflow: hidden;
   z-index: 1;
 }
+
 .calendar__title {
   font-size: 2rem;
   color: #fff;
@@ -102,7 +103,241 @@
 
 @media (min-width: 768px) {
   .button-53 {
-      padding: .75rem 3rem;
-      font-size: 1.25rem;
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
   }
+}
+
+.ventanaEmergente-textos{
+  margin: 20px;
+}
+
+.ventanaEmergente {
+  width: 300px;
+  background-color: #621D74;
+  z-index: 10;
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  font-family: var(--parrafos);
+  text-align: center;
+}
+
+.contenedor {
+  background-color: #000000a4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ri-close-circle-line {
+  position: relative;
+  left: 45%;
+  font-size: 20px;
+}
+
+.button-53rol {
+  z-index: 2;
+  background-color: #91BE28;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: var(--titulos);
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 50%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 20px;
+}
+
+.button-53rol:focus {
+  outline: 0;
+}
+
+.button-53rol:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53rol:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-53rol {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+.button-53del {
+  z-index: 2;
+  background-color: #b80000;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: var(--titulos);
+  font-size: 15px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 20px;
+
+}
+
+.button-53del:focus {
+  outline: 0;
+}
+
+.button-53del:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53del:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-53del {
+    padding: .75rem 3rem;
+  }
+}
+
+
+.botones{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ventanaRol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--titulos);
+}
+
+.ventanaRol input{
+  border: none;
+  margin: 10px;
+  padding: 5px;
+}
+
+.botonEliminar{
+  display: flex;
+  justify-content: center;
+}
+
+.button-53add {
+  z-index: 2;
+  background-color: #91BE28;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: var(--titulos);
+  font-size: 15px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 20px;
+
+}
+
+.button-53add:focus {
+  outline: 0;
+}
+
+.button-53add:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53add:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+hr{
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  margin: 5px 0;
+}
+
+.addUser p {
+  margin: 5px;
+}
+
+.addUser input{
+  margin: 5px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.ventanaRol input{
+  margin: 5px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
 }

@@ -37,7 +37,7 @@ export class ListadoEventosComponent implements OnInit {
       )
       .subscribe((response: any) => {
         if (response.ok) {
-          alert('Request sent! The admin will notify you.');
+          alert('Solucitud enviada. Nos pondremos en contacto contigo pronto.');
         } else {
           alert(`Error: ${response.msg}`);
         }

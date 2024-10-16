@@ -47,7 +47,7 @@ export class AuthService {
     documentoDeIdentidad: string,
     numeroDeContacto: string
   ): Observable<any> {
-    return this.http.post<any>(`${environment.apiUrl}/update-user`, {
+    return this.http.put<any>(`${environment.apiUrl}/update-user`, {
       email, pw, edad, nombre, nacionalidad, tipoDeDocumento, documentoDeIdentidad, numeroDeContacto
     });
   }
@@ -75,5 +75,9 @@ export class AuthService {
   public getRole(): string | null {
     return sessionStorage.getItem('rol');
   }
+
+  public assignRole(datos:any): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}/assign-role`, datos)
+  } 
 
 }

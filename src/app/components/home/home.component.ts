@@ -11,6 +11,8 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class HomeComponent {
   scrollOffset = 0;
 
+  correoBicitour: string = 'bicitourclub@gmail.com';
+
   onScroll(event:Event){
     const target = event.target as HTMLElement
     this.scrollOffset = target.scrollLeft;

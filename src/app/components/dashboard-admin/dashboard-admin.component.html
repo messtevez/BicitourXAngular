@@ -4,12 +4,62 @@
   <img class="backgroundImg" alt="" src="../../../assets/img/logo color.png">
   <h1 class="calendar__title">Tu dashboard</h1>
   <div class="caja-calendario">
-    <div class="boton">
-      <button class="button-53" (click)="navigateToCreateEvent()">Crear evento</button>
+    <div class="botones">
+      <div class="boton">
+        <button class="button-53" (click)="navigateToCreateEvent()">Crear evento</button>
+      </div>
+      <div class="boton">
+        <button class="button-53" (click)="roles()">Asignar rol</button>
+      </div>
     </div>
     <div class="calendar__content">
-      <full-calendar class="calendar__full-calendar" [options]="calendarOptions"></full-calendar>
+      <full-calendar class="calendar__full-calendar" #calendar [options]="calendarOptions"></full-calendar>
     </div>
-
   </div>
+
+  @if(monstrarVentana){
+  <div class="contenedor">
+    <div class="ventanaEmergente">
+      <i class="ri-close-circle-line" (click)="monstrarVentana=false"></i>
+      <div class="ventanaEmergente-textos">
+        <p>Valor inscripcion: ${{eventCost}} </p>
+        <p>Distancia: {{eventDistance}}</p>
+        <p>Categoria: {{eventCategory}} </p>
+        <p>Hora: {{eventTime}} </p>
+        <p>Lugar: {{eventLocation}} </p>
+      </div>
+      <hr>
+
+      <div class="addUser">
+        <div>
+          <p>Agrega un usuario al evento:</p>
+          <label for="email">Email:</label>
+          <input [(ngModel)]="email" type="email" name="email" placeholder="email">
+        </div>
+        <div class="botonEliminar">
+          <button class="button-53add" (click)="agregarUsuarios()">Enviar</button>
+        </div>
+      </div>
+      <hr>
+
+      <div class="botonEliminar">
+        <button class="button-53del" (click)="eliminarEvento()">Eliminar evento</button>
+      </div>
+
+    </div>
+  </div>
+  }
+
+  @if(ventanaRol){
+  <div class="contenedor">
+    <div class="ventanaEmergente ventanaRol">
+      <i class="ri-close-circle-line" (click)="ventanaRol=false"></i>
+      <div>
+      <label for="userEmail">Email:</label>
+      <input [(ngModel)]="email" type="userEmail" placeholder="example@example.com" name="userEmail">
+    </div>
+      <button (click)="assignRole()" class="button-53rol">Enviar</button>
+    </div>
+  </div>
+  }
 </div>

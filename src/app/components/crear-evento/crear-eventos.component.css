@@ -150,13 +150,14 @@
 }
 
 .error-message {
-  color: red;
+  color: white;
   font-size: 14px;
   margin-top: 5px;
+  font-weight: 200;
 }
 
 .evento__preview {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .evento__preview-titulo {

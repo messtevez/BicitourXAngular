@@ -3,9 +3,23 @@
 <div class="calendar">
   <img class="backgroundImg" alt="" src="../../../assets/img/logo color.png">
 
-    <h1 class="calendar__title">Tu dashboard</h1>
-    <div class="calendar__content">
-      <full-calendar class="calendar__full-calendar" [options]="calendarOptions"></full-calendar>
-    </div>
+  <h1 class="calendar__title">Tu dashboard</h1>
+  <div class="calendar__content">
+    <full-calendar class="calendar__full-calendar" [options]="calendarOptions"></full-calendar>
   </div>
+
   
+  @if(monstrarVentana){
+    <div class="contenedor">
+      <div class="ventanaEmergente">
+        <i class="ri-close-circle-line" (click)="monstrarVentana=false"></i>
+        <div class="ventanaEmergente-textos">
+          <p>Distancia: {{eventDistance}}</p>
+          <p>Categoria: {{eventCategory}} </p>
+          <p>Hora: {{eventTime}} </p>
+          <p>Lugar: {{eventLocation}} </p>
+        </div> 
+      </div>
+    </div>
+    }
+</div>

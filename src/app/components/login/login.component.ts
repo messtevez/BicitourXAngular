@@ -37,7 +37,6 @@ export class LoginComponent {
           this.router.navigate(['/dashboardU']);
         }
         
-        console.log(response);
       },
       error: error => {
         if (error.error.msg.email) {

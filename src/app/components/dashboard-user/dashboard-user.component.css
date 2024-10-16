@@ -101,3 +101,37 @@
         font-size: 1.25rem;
     }
 }
+
+.ventanaEmergente-textos{
+  margin: 20px;
+}
+
+.ventanaEmergente {
+  width: 300px;
+  background-color: #621D74;
+  z-index: 10;
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  font-family: var(--parrafos);
+  text-align: center;
+}
+
+.contenedor {
+  background-color: #000000a4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ri-close-circle-line {
+  position: relative;
+  left: 45%;
+  font-size: 20px;
+}

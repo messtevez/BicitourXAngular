@@ -17,21 +17,42 @@ export class DashboardUserComponent implements OnInit {
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
-    events: []
+    events: [],
+    eventClick: (info) => {
+      this.eventDistance = info.event.extendedProps['distance']
+      this.eventTime = info.event.extendedProps['hour']
+      this.eventLocation = info.event.extendedProps['location']
+      this.eventCategory = info.event.extendedProps['category']
+      this.monstrarVentana = true
+    }
   };
 
-  constructor(private router: Router, private eventService: EventService) {}
+  public selectedEventId: string = '';
+  eventDistance = ''
+  eventTime = ''
+  eventLocation = ''
+  eventCategory = ''
+  monstrarVentana = false
+
+
+  constructor(private router: Router, private eventService: EventService) { }
 
   ngOnInit(): void {
-    const userId = sessionStorage.getItem('userId');
+    const userId = sessionStorage.getItem('id'); 
     if (userId) {
       this.eventService.getEventsByUserId(userId).subscribe({
         next: (response) => {
           if (response.ok && response.events) {
             this.calendarOptions.events = response.events.map((event: any) => ({
-              title: event.name,
-              start: event.date + 'T' + event.hour,
-              end: event.date + 'T' + event.hour
+              title: event.title,
+              start: event.date,
+              end: event.date,
+              extendedProps: {  
+                distance: event.distance,
+                hour: event.hour,
+                location: event.location,
+                category: event.category,
+              }
             }));
           }
         },

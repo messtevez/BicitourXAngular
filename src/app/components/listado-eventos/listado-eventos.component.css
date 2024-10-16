@@ -1,6 +1,6 @@
 .eventos{
     background-color: #EBA935;
-    height: 100vh;
+    height: 100%;
     padding-top: 100px;
     display: flex;
     flex-direction: column;
@@ -113,6 +113,8 @@
 .eventoDes h4{
     font-family: var(--titulos);
     color: white;
+    font-weight: 400;
+    font-size: 30px;
 }
 
 .eventoDes p{

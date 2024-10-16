@@ -48,9 +48,15 @@ export class UpdateProfileComponent {
       (response: any) => {
         if (response.ok) {
           Swal.fire('Datos actualizados correctamente.', response.msg, 'success')
-          this.router.navigate(['/perfil'])
+          sessionStorage.setItem('nombre', response.user.nombre);
+          const rol = sessionStorage.getItem('rol')
+          if (rol== 'admin') {
+            this.router.navigate(['/dashboardA']);
+          } else {
+            this.router.navigate(['/dashboardU']);
+          } 
         } else {
-          Swal.fire()
+          Swal.fire('Error, intenta nuevamente.', response.msg.error, 'error')
         }
       }, error => {
         console.log(error)

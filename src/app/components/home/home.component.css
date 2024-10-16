@@ -12,6 +12,16 @@
     overflow-x: scroll;
 }
 
+.backgroundImg {
+    opacity: 0.8;
+    position: absolute;
+    left: 1122px;
+    bottom: -200px;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
 
 .img {
     height: 30rem;
@@ -107,8 +117,10 @@ footer img {
     margin: 10px;
     height: 20px;
     font-size: 60px;
-    text-decoration: none;
+}
 
+.redesSociales a{
+    text-decoration: none;
 }
 
 .floatingMedia {

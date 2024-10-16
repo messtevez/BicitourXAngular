@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import UploadImage from '../../services/store.service';
 import { EventService } from '../../services/event.service';
 import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-eventos',
@@ -15,7 +17,7 @@ import { NgForm } from '@angular/forms';
 })
 export class CrearEventosComponent {
   evento = {
-    name: '',
+    title: '',
     date: '',
     hour: '',
     location: '',
@@ -23,6 +25,7 @@ export class CrearEventosComponent {
     distance: '',
     capacity: 0,
     category: '',
+    descripcion:'',
     eventImg: [] as string[]
   };
 
@@ -31,7 +34,7 @@ export class CrearEventosComponent {
   errorMessage: string = '';
   isSubmitting: boolean = false;
 
-  constructor(private eventService: EventService) {}
+  constructor(private eventService: EventService, private router:Router) {}
 
   async cargarImagenes(event: Event) {
     const fileInput = event.target as HTMLInputElement;
@@ -60,7 +63,7 @@ export class CrearEventosComponent {
 
   guardarEvento(eventoForm: NgForm) {
     if (!eventoForm.valid || this.evento.eventImg.length !== 1) {
-      this.errorMessage = 'Por favor, completa todos los campos correctamente y carga exactamente 3 imágenes.';
+      this.errorMessage = 'Por favor, completa todos los campos correctamente y carga exactamente 1 imagen.';
       this.markFormFieldsAsTouched(eventoForm);
       return;
     }
@@ -71,6 +74,8 @@ export class CrearEventosComponent {
     this.eventService.createEvent(this.evento).subscribe({
       next: (response) => {
         console.log('Evento creado exitosamente:', response);
+        Swal.fire('Evento creado exitosamente', response.msg, 'success')
+        this.router.navigate(['/dashboardA'])
         this.resetForm(eventoForm);
       },
       error: (error) => {

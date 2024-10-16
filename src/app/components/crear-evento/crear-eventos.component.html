@@ -18,7 +18,7 @@
               class="evento__input"
               id="name"
               type="text"
-              [(ngModel)]="evento.name"
+              [(ngModel)]="evento.title"
               name="name"
               required
               #name="ngModel"
@@ -139,6 +139,22 @@
             />
             <div class="error-message" *ngIf="category.invalid && category.touched">
               La categoría del evento es requerida.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="evento__label" for="descripcion">Descripcion:</label>
+            <textarea name="descripcion" id="descripcion" rows="4"
+            class="evento__input"
+              id="descripcion"
+              type="text"
+              [(ngModel)]="evento.descripcion"
+              name="descripcion"
+              required
+              #category="ngModel"></textarea>
+            
+            <div class="error-message" *ngIf="evento.descripcion">
+              Pon una descripcion.
             </div>
           </div>
 

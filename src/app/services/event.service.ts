@@ -31,7 +31,7 @@ export class EventService {
   }
 
   public addAttendeeToEvent(id: string, attendeeData: any): Observable<any> {
-    return this.http.put(`${environment.apiUrl}/events/${id}/reg`, attendeeData);
+    return this.http.put(`${environment.apiUrl}/events/${id}/add`, attendeeData);
   }
 
   public getEventsByUserId(userId: string): Observable<any> {
